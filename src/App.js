@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import Profile from './public/profile';
+import IMG from "./Asset/photo.jpg";
+
+function App({handleName}) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {/* The profile component gets data (fullName, bio, profession) as props */}
+    <Profile 
+      fullName="Abdeldjallil boudekhana " 
+      bio="Hey ! i am abdel djallil im learning Full sztack web developpment " 
+      profession="FullStack Web Developper" 
+
+      /*gets the function handleName functions as a prop that sends an alert message with the name of the profile user. */
+      onMouseOver={handleName}
+    >
+      {/*gets image as children props*/}
+      {IMG}
+    </Profile>
+  </>
   );
 }
 
